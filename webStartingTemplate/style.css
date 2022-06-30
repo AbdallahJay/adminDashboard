@@ -40,7 +40,7 @@ body{
     padding-top:10px
 }
 .col-lg-3{
-    paading-top:10px
+    padding-top:10px
 }
 /*small devices(landscape phones,576px and up */
 @media  screen and (min-width:576px) {
@@ -61,7 +61,7 @@ body{
     }
 }
 /*Extra small devices (portrait phones, less than 576px)*/
-@media screen and (max-width:575.98px)
+@media screen and (max-width:575.98px){
     .sidebar{
         width: 50px;
     }
@@ -76,6 +76,7 @@ body{
     }
     .main-content{
         margin-left: 50px;
+    }
 }
 /*Medium devices (tablets,768 and up)*/
 @media screen and (min-width:768px) {
@@ -112,7 +113,7 @@ body{
         margin-left: 200px;
     }
     }
-    @media screen and (min-width:1200px)
+    @media screen and (min-width:1200px){
         .sidebar{
             width:200px;
         }
@@ -128,6 +129,6 @@ body{
         .main-content{
             margin-left: 200px;
         
+        }
     }
-    
     
