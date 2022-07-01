@@ -38,8 +38,8 @@
 						<input type="text" name = "password" class ="form-control" >
 					</div>
 						<div class="col-lg-12">
-							<label for="confirmpassword" class="form label"><b>Confirm Password:</b></label>
-							<input type="text" name = "confirmpassword" class ="form-control" >
+							<label for="cpassword" class="form label"><b>Confirm Password:</b></label>
+							<input type="password" name = *cpassword* id=*cpassword* class ="form-control" >
 						</div>
 				</div>
 				<button type="submit" class="btn btn-primary" name="submitbutton">Submit  </button>

@@ -21,7 +21,7 @@
 		<nav>
 			<ul>
 				<li>
-				<a href="">
+				<a href="students.php">
 					<span> <i class="fa fa-group"></i></span>
 					<span>Students</span>
 					

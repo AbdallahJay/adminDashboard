@@ -31,7 +31,7 @@
 					
 					<div class="col-lg-12">
 						<label for="password" class="form label"><b>Password:</b></label>
-						<input type="text" name = "password" class ="form-control" >
+						<input type="password" name = "password" id="password" class ="form-control" >
 					</div>
 						
 				</div>
