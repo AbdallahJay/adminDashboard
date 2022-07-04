@@ -1,3 +1,17 @@
+
+<?php
+$server = "localhost";
+$username="root";
+$password="";
+$database="web2";
+
+$conn= mysqli_connect($server,$username,$password,$database);
+
+$sqlQuery= mysqli_query($conn,"SELECT * FROM enrollment");
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,27 +81,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Jamal Abdallah</td>
-                                    <td>+254715855922</td>
-                                    <td>mallohmalloh47@gmail.com</td>
-                                    <td>Male</td>
-                                    <td>Web Design & Development</td>
-                                    <td>23rd Aug 2022</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-info btn-sm">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </td>
-                                    
-                                </tr>
+                            <?php while($fetchRecords=mysqli_fetch_array($sqlQuery)) { ?>
+								<tr>
+									<td><?php echo $fetchRecords['no']?></td>
+								</tr>
+								<?php }?>
                             </tbody>
                         </table>
                     </div>
