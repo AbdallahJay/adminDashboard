@@ -51,9 +51,9 @@ $sqlQuery= mysqli_query($conn,"SELECT * FROM enrollment");
 									<td><?php echo $fetchRecords['course']?></td>
 									<td><?php echo $fetchRecords['created_at']?></td>
 									<td>
-										<a href="">Edit</a>
-										<a href="">View</a>
-										<a href="">Delete</a>
+										<a href="edit-enrollment.php?id=<?php echo $fetchRecords['no'] ?>" class="btn btn-primary"><i class="fa fa-edit"></i></a>
+										<a href="" class="btn btn-info"><i class="fa fa-eye"></i></a>
+										<a href="" class="btn btn-danger"><i class="fa fa-trash"></i></a>
 									</td>
 								</tr>
 								<?php }?>
