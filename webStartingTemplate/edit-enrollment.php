@@ -11,6 +11,30 @@ while($fetchuser=mysqli_fetch_array($queryuser))
 	$gender=$fetchuser['gender'];
 	$course=$fetchuser['course'];
 }
+
+//update user records
+if(isset($_POST['updateRecords'])) 
+{
+	//fetch form data
+	$name=$_POST['fullname'];
+	$phone=$_POST['phonenumber'];
+	$emailAddress=$_POST['email'];
+	$formgender=$_POST['gender'];
+	$formcourse=$_POST['course'];
+
+	//update records
+	$updateQuery= mysqli_query($conn,
+	"UPDATE enrollment SET fullname='$name',phonenumber='$phone',email='$emailAddress',gender='$formgender',course'$formcourse'
+	WHERE no='".$_GET['id']."'");
+
+	if($updateQuery)
+	{
+		echo "Data updated";
+	}
+	else{
+		echo "Error occured";
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,27 +58,27 @@ while($fetchuser=mysqli_fetch_array($queryuser))
                             <h4>Edit Student:  </h4>
                         </div>
 						<div class="card-body">
-							<form action="enroll.php" method = "POST">
+							<form action="edit-enrollment.php" method = "POST">
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-12">
 										<label for="email" class="form label"><b>E-mail</b></label>
 										<input type="email"value="<?php echo $email?>" class="form-control"name="email" placeholder="please enter your Email" >
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-12">
 										<label for="phonenumber" class="form label"><b>Phone Number</b></label>
 										<input type="tel" name = "phonenumber" value="<?php echo $phonenumber?>"class="form-control" placeholder="+2547" >
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-12">
 										<label for="fullname" class="form label"><b>Full Name</b></label>
 										<input type="text" name = "fullname" value="<?php echo $fullname?>" class ="form-control" placeholder="Enter your full name" >
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-12">
 										<label for="gender" class="form label"><b>whats your gender</b></label>
 										<select class="form-control" aria-label="default select example" name = "gender">
 											<option> <?php echo $gender?></option>
@@ -65,18 +89,19 @@ while($fetchuser=mysqli_fetch_array($queryuser))
 								</div>
 								
 								<div class="row">
-									<div class="col-lg-6">
+									<div class="col-lg-12">
 										<label for="preferredcourse" class="form label"><b>whats your preferred course?</b></label>
 										<select class="form-control" aria-label="default select example" name = "course">
-											<option n> <?php echo $course?></option>
+											<option> <?php echo $course?></option>
 											<option value="Web development">Web development</option>
 											<option value="Cyber Security">Cyber Security</option>
 											<option value="Data analysis">Data analysis </option>
 										</select>
 									</div>
 								</div> 
-								
-								<button type="submit" class="btn btn-primary" name="submitbutton">Update Records </button>
+								<div class="row">
+								<button type="submit" class="btn btn-primary" name="updateRecords">Update Records </button>
+								</div>
 								</div>
 							</form>
 						</div>
