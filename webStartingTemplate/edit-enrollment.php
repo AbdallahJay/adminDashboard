@@ -1,10 +1,12 @@
 <?php
+$message="";
 require_once('logics/dbconnection.php');
 $queryuser=mysqli_query($conn,"SELECT * FROM enrollment WHERE no ='".$_GET['id']."'");
 
 
 while($fetchuser=mysqli_fetch_array($queryuser))
 {
+	$id= $fetchuser['no'];
 	$fullname=$fetchuser['fullname'];
 	$phonenumber=$fetchuser['phonenumber'];
 	$email=$fetchuser['email'];
@@ -24,15 +26,15 @@ if(isset($_POST['updateRecords']))
 
 	//update records
 	$updateQuery= mysqli_query($conn,
-	"UPDATE enrollment SET fullname='$name',phonenumber='$phone',email='$emailAddress',gender='$formgender',course'$formcourse'
+	"UPDATE enrollment SET fullname='$name',phonenumber='$phone',email='$emailAddress',gender='$formgender',course='$formcourse'
 	WHERE no='".$_GET['id']."'");
 
 	if($updateQuery)
 	{
-		echo "Data updated";
+		$message="Data updated";
 	}
 	else{
-		echo "Error occured";
+		$message="Error occured";
 	}
 }
 ?>
@@ -56,9 +58,10 @@ if(isset($_POST['updateRecords']))
                     <div class="card">
                         <div class="card-header bg-dark text-center text-white">
                             <h4>Edit Student:  </h4>
+							<span><?php echo $message?></span>
                         </div>
 						<div class="card-body">
-							<form action="edit-enrollment.php" method = "POST">
+							<form action="edit-enrollment.php?id=<?php echo $id?>" method = "POST">
 								<div class="row">
 									<div class="col-lg-12">
 										<label for="email" class="form label"><b>E-mail</b></label>
