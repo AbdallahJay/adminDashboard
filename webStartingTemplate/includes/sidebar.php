@@ -1,6 +1,6 @@
 <nav>
 			<ul>
-			<li>
+			    <li>
 				<a href="index.php">
 					<span> <i class="fa fa-home"></i></span>
 					<span>Home</span>
@@ -19,13 +19,21 @@
 						<span> <i class="fa fa-folder-open"></i></span>
 						<span>Courses</span>
 					</a>	
-					</li>
-					<li>
-						<a href="">
-							<span> <i class="fa fa-graduation-cap"></i></span>
-							<span>Campus</span>
+				</li>
+				<li>
+					<a href="">
+						<span> <i class="fa fa-graduation-cap"></i></span>
+						<span>Campus</span>
 							
-						</a>	
-						</li>
+					</a>	
+				</li>
+				<li>
+				<a href="contactus.php">
+					<span> <i class="fa fa-envelope"></i></span>
+					<span>messages</span>
+							
+				</a>	
+				</li>
+				
 			</ul>
 		</nav>
