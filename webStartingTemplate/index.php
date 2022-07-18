@@ -84,7 +84,7 @@ $countAllFemale =  mysqli_num_rows($queryAllFemale);
 				</div>
 				<div class="col-lg-12">
 					<div class="card-header bg-dark text-white text-center">
-						<span>Contact Us</span>
+						<span>Messages</span>
 					</div>
 					<div class="card-body">
 						<span> <i class="fa fa-envelope fa-3x"></i></span>
@@ -96,6 +96,6 @@ $countAllFemale =  mysqli_num_rows($queryAllFemale);
 		</div>	
 	</div>
 	
-	<?php require_once('includes/sripts.php')?>
+	<?php require_once('includes/scripts.php')?>
 </body>
 </html>
