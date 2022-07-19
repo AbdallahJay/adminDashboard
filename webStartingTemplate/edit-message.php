@@ -19,15 +19,15 @@ if(isset($_POST['updateRecords']))
 {
 	//fetch form data
 	$firstname=$_POST['firstname'];
-    $secondname=$_POST['lastname'];
+    $lastname=$_POST['lastname'];
 	$phone=$_POST['phonenumber'];
 	$emailAddress=$_POST['email'];
-	$createdat=$_POST['created_at'];
+	
 	
 
 	//update records
 	$updateQuery= mysqli_query($conn,
-	"UPDATE contactus SET firstname='$firstname,'secondname='$lastname',phonenumber='$phone',email='$emailAddress',createdat='$created_at'
+	"UPDATE contactus SET firstname='$firstname',lastname='$lastname',phonenumber='$phone',email='$emailAddress'
 	WHERE no='".$_GET['id']."'");
 
 	if($updateQuery)
@@ -62,7 +62,7 @@ if(isset($_POST['updateRecords']))
 							<span><?php echo $message?></span>
                         </div>
 						<div class="card-body">
-							<form action="edit-enrollment.php?id=<?php echo $id?>" method = "POST">
+							<form action="edit-message.php?id=<?php echo $id?>" method = "POST">
 								<div class="row">
 									<div class="col-lg-12">
 										<label for="firstname" class="form label"><b>First Name</b></label>
